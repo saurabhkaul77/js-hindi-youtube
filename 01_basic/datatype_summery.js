@@ -1,4 +1,4 @@
-// pritimive
+// pritimive  (work on copy)
 
 
 // ==> String
@@ -10,7 +10,7 @@
 // ==>BigInt
 
 
-// non-primitive  (reference)
+// non-primitive  (reference) work on original 
 
 // ==>array
 // ==>object
