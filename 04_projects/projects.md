@@ -36,8 +36,8 @@ buttons.forEach(function (button) {
 
 
 ## project 2 solution
-```
-const form = document.querySelector('form');
+
+```const form = document.querySelector('form');
 
 form.addEventListener('submit', function(e){
   e.preventDefault();
@@ -60,6 +60,7 @@ form.addEventListener('submit', function(e){
 });
 
 ```
+
 ## project 3 solution
 
 ```
@@ -75,7 +76,6 @@ setInterval(function(){
 
 ## project 4 solution
  ```
- 
 let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const submit = document.querySelector('#subt');
@@ -170,3 +170,63 @@ function newGame() {
 
 
  ```
+
+## Project 5 Random Color Generator
+
+```
+
+// generate a random colour
+
+const randomColor = function(){
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for(let i=0; i<6; i++){
+    color+= hex[Math.floor(Math.random()*16)];
+  }
+  return color;
+};
+let intervalId;
+const startChangeColor = function(){
+  
+  intervalId= setInterval(changeBgColor,1000);
+  function changeBgColor(){
+    document.body.style.backgroundColor = randomColor();
+  }
+}
+const stopChangeColor = function(){
+  clearInterval( intervalId);
+  intervalId = null;
+}
+
+document.querySelector('#start').addEventListener('click',startChangeColor)
+
+document.querySelector('#stop').addEventListener('click',stopChangeColor)
+
+```
+
+
+## Project 6 KeyCode
+
+```
+const inert = document.querySelector('#insert')
+
+window.addEventListener('keydown', (e)=>{
+   inert.innerHTML = `
+   <div class='color'>
+   <table>
+   <tr>
+     <th>Key</th>
+     <th>KeyCode</th>
+     <th>Code</th>
+   </tr>
+   <tr>
+     <td>${e.key ===" "? 'Space':e.key}</td>
+     <td>${e.keyCode}</td>
+     <td>${e.code}</td>
+   </tr>
+   
+ </table>
+ 
+   </div>`
+})
+```
